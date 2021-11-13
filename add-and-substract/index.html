@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Calculator</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <section id="banner">
+    <p>Matrix Calculator<hr></p>
+    <div id="upper">
+        <div id="matrix1" class="matrix">
+            <h1 class="title">Matrix A</h1>
+            <input type="number" class="m1r1" value="0"/>
+            <input type="number" class="m1r1" value="0"/>
+            <input type="number" class="m1r1" value="0"/>
+            <input type="number" class="m1r2" value="0"/>
+            <input type="number" class="m1r2" value="0"/>
+            <input type="number" class="m1r2" value="0"/>
+            <input type="number" class="m1r3" value="0"/>
+            <input type="number" class="m1r3" value="0"/>
+            <input type="number" class="m1r3" value="0"/>
+        </div>
+        
+        <div id="matrix2" class="matrix">
+             <h1 class="title">Matrix B</h1>
+             <input type="number" class="m2r1" value="0"/>
+             <input type="number" class="m2r1" value="0"/>
+             <input type="number" class="m2r1" value="0"/>
+             <input type="number" class="m2r2" value="0"/>
+             <input type="number" class="m2r2" value="0"/>
+             <input type="number" class="m2r2" value="0"/>
+             <input type="number" class="m2r3" value="0"/>
+             <input type="number" class="m2r3" value="0"/>
+             <input type="number" class="m2r3" value="0"/>
+        </div>
+    </div>
+    <div id="operations">
+        <input class="operation" type="button" value="A + B" onclick="mc.addMatrix()"/>
+        <input class="operation" type="button" value="A - B" onclick="mc.subtractMatrix()"/>
+        <input type="button" class="operation" value="Clear" onclick="mc.clear()"/>
+    </div>
 
+
+    <div id="lower">
+        
+        <textarea wrap="soft" id="console" cols="20" rows="10" disabled>Result:</textarea>
+    </div>
+   
+</section>
+
+
+
+    <!-- ----- Footer -----  -->
+    <div class="footer">
+        <div class="footer-name">
+            <a href="../index.html"><h4>MatC</h4></a>
+            <p>Matrix calculator made with 💗 and ☕</p>
+        </div>
+
+        <div class="footer-content">
+            <span><a href="/add-substract/">Addition</a> </span><span>|</span>
+            <span><a href="/add-substract/">Substraction</a> </span><span>|</span>
+            <span><a href="#">Multiplication</a> </span><span>|</span>
+            <span><a href="#">Inverse</a> </span><span>|</span>
+            <span><a href="#">Determinant</a> </span><span>|</span>
+            <span><a href="#">Power of Matrix</a> </span><span>|</span>
+            <span><a href="#">Rank of Matrix</a> </span><span>|</span>
+            <span><a href="#">Gauss Jordan</a> </span><span>|</span>
+            <span><a href="#">Gauss Elimination</a> </span>
+        </div>
+    </div>
+
+
+    <!-- ----- Footer-----  -->
+
+
+
+
+
+</body>
+</html>
