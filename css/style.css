@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+ /* -----Navbar-----  */
+
+ .navbar{
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     background-color: transparent;
+ }
+
+ .navbar .logo{
+     padding: 10px 40px;
+ }
+
+ .navbar .logo a{
+     font-size: 1.5rem;
+     font-weight: 700;
+     letter-spacing: 2px;
+     color: #2d7dd2;
+ }
+
+ .navbar .logo a span{
+     color: #1cfeba;
+ }
+
+ .cal ul{
+     padding: 15px 40px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+ }
+
+ .cal ul li{
+     margin: 0px 20px;
+     position: relative;
+ }
+
+
+
+  .cal ul li:after {
+     position: absolute;
+     content: '';
+     height: 1.5px;
+     bottom: -4px; 
+     margin: 0 auto;
+     left: 0;
+     right: 0;
+     width: 0%;
+     background: #2d7dd2;
+     -o-transition:.4s;
+     -ms-transition:.4s;
+     -moz-transition:.4s;
+     -webkit-transition:.4s;
+     transition:.4s;
+ }
+  
+
+  /* optional hover classes used with anmiation */
+   .cal ul li:hover:after {
+       width: 80%;
+       background: #2d7dd2;
+ }
+
+ .cal ul li a{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d7dd2;
+ }
+
+ .cal ul li:hover a{
+     color: #2969ad;
+ }
+
+ .navbar.sticky {
+     position: fixed;
+     top: 0;
+     left: 0; right: 0;
+     background-color: #f5f5f5;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+     z-index: 10000;
+ }
+
+
+ @media screen and (max-width: 600px) and (min-width: 400px){  
+     .navbar .logo{
+         padding: 10px 20px;
+     }
+
+     .cal ul{
+         padding: 15px 10px;
+     }
+
+     .cal ul li{
+         margin: 0px 10px;
+     }
+
+
+  }
+
+  @media screen and (max-width: 400px){
+    .cal{
+        display: none;
+    }
+  }
+
+
+
+
+ /* -----Navbar-----  */
+
+
+
+
+
+ /* -----Header-----  */
+
+  .header{
+      width: 100%;
+      height: 80vh;
+      background-image: url(../images/bg.jpg);
+      background-size: cover;
+      background-position: 0%;
+      align-items: center;
+      transition: 0.5s;
+      
+  }
+
+  .head{
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+           
+  }
+
+  .head h2{
+      margin: auto;
+      margin-top: 30px;
+      padding: 0px 20px;
+      color: #222;
+      font-size: 1.7rem;
+      text-align: center;
+  }
+
+  .matc{
+      margin-top: 20px;
+      width: 40%;
+      margin: auto;
+  }
+
+  .matc img{
+      width: 100%;
+      transition: 0.6s;
+  }
+
+  .matc img:hover{
+      transform: translateY(10px);
+  }
+
+
+
+  @media screen and (max-width: 1000px) and (min-width: 600px){  
+    .matc{
+        margin-top: 25px;
+        width: 70%;
+    } 
+  }
+
+  @media screen and (max-width: 600px) and (min-width: 300px){
+    .matc{
+        margin-top: 50px;
+        width: 80%;
+    } 
+  }
+
+  @media screen and (max-width: 300px){
+    .matc{
+        margin-top: 60px;
+        width: 90%;
+    } 
+  }
+
+ /* -----Header-----  */
+
+
+ 
+  /* ----options-----  */
+
+  .options{
+      padding: 100px 50px;
+      background-color: #f5f5f5;
+      text-align: center;
+  }
+
+  .options h2{
+      font-size: 1.5rem;
+      color: #222;
+    }
+
+
+  .choose{
+    margin: 100px 0;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 250px 250px 250px;
+    background-color: #f5f5f5
+    
+  }
+
+  .choose a{
+    background-color: #2d7dd2;
+    color: #f5f5f5;
+    margin: 1px;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+  }
+
+  .choose a:hover{
+      background-color: #1cfeba;
+      color: #2d7dd2;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+      }
+
+  @media screen and (max-width: 787px) and (min-width: 500px){
+      .choose{
+        grid-template-columns: 225px 225px;
+      }
+
+      .choose a{
+
+        padding: 10px 15px;
+
+      }
+
+  }
+
+  @media screen and (max-width: 500px){
+    .choose{
+        grid-template-columns: 225px;
+      }
+
+      .choose a{
+
+        padding: 10px 15px;
+
+      }
+      .options h2{
+        font-size: 1rem;
+        color: #222;
+      }
+      .options{
+        padding: 50px 10px;
+        background-color: #f5f5f5;
+        text-align: center;
+    }
+
+  }
+
+
+
+  /* ----options-----  */
+
+
+
+
+
+
+
+
+  /* ----- Footer -----  */
+
+  .footer{
+      background-color: #1E2D2F;
+      padding: 20px 20px;
+      text-align: center;
+  }
+
+  .footer-name{
+      margin-top: 10px;
+  }
+
+  .footer-name h4{
+      font-size: 2rem;
+      color: #f5f5f5;
+  }
+  .footer-name p{
+      font-size: 1rem;
+      color: #d8d8d8;
+  }
+
+  .footer-content{
+      margin-top: 15px;
+      color: #868686;
+      
+  }
+
+  .footer-content span{
+      margin: 4px;
+  }
+
+  .footer-content span a{
+    color: #afafaf;
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 400px){
+    .footer-name h4{
+        font-size: 1.7rem;
+    }
+    .footer-name p{
+        font-size: 0.8rem;
+    }
+    .footer{
+        padding: 20px 10px;
+    }
+    .footer-content span{
+        margin: 2px;
+    }
+  
+    .footer-content span a{
+      font-size: 10px;
+  }
+  }
+
+
+
+
+
+  /* ----- Footer -----  */
