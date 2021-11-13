@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+#banner p{
+    text-align: center;
+    display: block;
+    margin:auto;
+    color:#2d7dd2;
+    font-size:70px;
+    padding-top: 20px;
+}
+
+#banner{
+    background:#f5f5f5;
+    background-size:cover;
+    background-position: center;
+    height:auto;
+
+}
+
+.motion{
+    color: rgb(0, 0, 0);
+    background-color:rgb(248, 244, 244);
+    height : 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#upper{
+
+    margin-top : 50px;
+    border-style: double;
+    border-width: 5px 5px;;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
+    width: 30em;
+    padding-bottom: 25px;
+    background: #e0dddd;
+    align-items: center;
+    justify-content: center;
+    gap : 50px
+}
+
+#matrix1 , #matrix2{
+    order:1;
+    width:9em;
+    height:40%;
+    background:rgb(241, 239, 239) ;
+    margin-top : 20px;
+}
+
+#operations {
+    order:1;
+    gap : 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 10px;
+    
+    /* justify-content: center; */
+}
+
+.operation{
+    width: 5em;
+    height: 10%;
+}
+
+.matrix{
+    display: flex;
+    flex-flow: row wrap;
+    width:9em;
+    background: #fafafa;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    order:1;
+    font-family: "Times New Roman", serif;
+    width: 12em;
+    height: 10%;
+    text-align: center;
+
+}
+
+.m1r1,.m2r1{
+    order: 2;
+    width: 3em;
+    height: 10%;
+    text-align: center;
+}
+
+.m1r2,.m2r2{
+    order: 3;
+    width: 3em;
+    height: 10%;
+    text-align: center;
+}
+
+.m1r3,.m2r3{
+    order: 3;
+    width: 3em;
+    height: 10%;
+    text-align: center;
+}
+
+#lower{
+    display: flex;
+    justify-content: center;
+}
+
+
+#console{
+    display: block;
+    margin-bottom: 40px;
+    max-width: 500px;
+    width: 90%;
+}
+
+
+
+
+@media screen and (max-width: 750px){
+    #banner p{
+        font-size: 40px;
+    }
+
+    #upper {
+        width: 12em;
+    }
+}
+
+
+
+
+
+  /* ----- Footer -----  */
+
+  .footer{
+    background-color: #1E2D2F;
+    padding: 20px 20px;
+    text-align: center;
+}
+
+.footer-name{
+    margin-top: 10px;
+}
+
+.footer-name h4{
+    font-size: 2rem;
+    color: #f5f5f5;
+}
+.footer-name p{
+    font-size: 1rem;
+    color: #d8d8d8;
+}
+
+.footer-content{
+    margin-top: 15px;
+    color: #868686;
+    
+}
+
+.footer-content span{
+    margin: 4px;
+}
+
+.footer-content span a{
+  color: #afafaf;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 400px){
+  .footer-name h4{
+      font-size: 1.7rem;
+  }
+  .footer-name p{
+      font-size: 0.8rem;
+  }
+  .footer{
+      padding: 20px 10px;
+  }
+  .footer-content span{
+      margin: 2px;
+  }
+
+  .footer-content span a{
+    font-size: 10px;
+}
+}
+
+
+
+
+
+/* ----- Footer -----  */
