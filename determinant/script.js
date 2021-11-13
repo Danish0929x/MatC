@@ -71,35 +71,87 @@ class MatrixCalculator {
        this.printOnConsole(document.getElementById('console').value = 'Result:');
 
 	}
-    multiplyMatrix() {
+    calDeterminantA() {
 		this.rebuildMatrix();
-		if (this.AxDimension!=this.ByDimension) {
-			this.printOnConsole("Number of columns on A is different from number of rows on B.");
+		if (this.AxDimension!=this.AyDimension) {
+			this.determinantA=null;
+			this.printOnConsole("Non-square matrix, determinant cannot be calculated.");
 			return;
 		}
-		var result = [];
-		for(var i=0; i<3; i++) 
-			result[i]=[];
-		i=0;
-		var j=0;
-		//x refers to columns, y refers to rows
-		var rowsRes = this.AyDimension;
-		var columnsRes = this.BxDimension;
-		
-		for (i=0; i<rowsRes; i++) {
-			for (j=0; j<columnsRes; j++) {
-				result[i][j] = this.matrixA[i][0]*this.matrixB[0][j]+this.matrixA[i][1]*this.matrixB[1][j]+this.matrixA[i][2]*this.matrixB[2][j];
-				result[i][j] = Math.round(result[i][j]*100)/100;
-			}
+		var determinant;
+		if (this.AxDimension==1) {
+			determinant = this.matrixA[0][0];
 		}
-		var string = "Multiplication result:\r";
-		for (i=0; i<rowsRes; i++) {
-			for (j=0; j<columnsRes; j++) {
-				string=string+"\t"+result[i][j];
-			}
-			string=string+"\r";
+		if (this.AxDimension==2) {
+			determinant = (this.matrixA[0][0]*this.matrixA[1][1])-(this.matrixA[0][1]*this.matrixA[1][0]);
 		}
-		this.printOnConsole(string);
+		if (this.AxDimension==3) {
+			// Calculate determinatant of a 3*3 matrix 
+			//      |a b c|
+			// |A|= |d e f|  = ( a*e*i + b*f*g + c*d*h - a*f*h -b*f*g - c*e*g)
+			//      |g h i|
+
+			var op1, op2, op3, r1, r2, r3;
+			op1 = this.matrixA[0][0]*this.matrixA[1][1]*this.matrixA[2][2];
+			op2 = this.matrixA[0][1]*this.matrixA[1][2]*this.matrixA[2][0];
+			op3 = this.matrixA[0][2]*this.matrixA[1][0]*this.matrixA[2][1];
+			r1 = this.matrixA[0][2]*this.matrixA[1][1]*this.matrixA[2][0];
+			r2 = this.matrixA[0][0]*this.matrixA[1][2]*this.matrixA[2][1];
+			r3 = this.matrixA[0][1]*this.matrixA[1][0]*this.matrixA[2][2];
+			determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
+		}
+		this.determinantA = determinant;
+		//adding determinant of A in local storage
+		let det;
+		if(localStorage.getItem('Determinant(A)')===null){
+			det=[];
+		}else{
+			det=JSON.parse(localStorage.getItem('Determinant(A)'));
+		}
+		det.push(determinant);
+		localStorage.setItem('Determinant(A)',JSON.stringify(det));
+
+		this.printOnConsole("Determinant of matrix A: "+determinant)
+		return;
+	}
+
+
+
+	calDeterminantB() {
+		this.rebuildMatrix();
+		if (this.BxDimension!=this.ByDimension) {
+			this.determinantB=null;
+			this.printOnConsole("Non-square matrix, determinant cannot be calculated.");
+			return;
+		}
+		var determinant;
+		if (this.BxDimension==1) {
+			determinant = this.matrixB[0][0];
+		}
+		if (this.BxDimension==2) {
+			determinant = (this.matrixB[0][0]*this.matrixB[1][1])-(this.matrixB[0][1]*this.matrixB[1][0]);
+		}
+		if (this.BxDimension==3) {
+			var op1, op2, op3, r1, r2, r3;
+			op1 = this.matrixB[0][0]*this.matrixB[1][1]*this.matrixB[2][2];
+			op2 = this.matrixB[0][1]*this.matrixB[1][2]*this.matrixB[2][0];
+			op3 = this.matrixB[0][2]*this.matrixB[1][0]*this.matrixB[2][1];
+			r1 = this.matrixB[0][2]*this.matrixB[1][1]*this.matrixB[2][0];
+			r2 = this.matrixB[0][0]*this.matrixB[1][2]*this.matrixB[2][1];
+			r3 = this.matrixB[0][1]*this.matrixB[1][0]*this.matrixB[2][2];
+			determinant = Math.round((op1+op2+op3-r1-r2-r3)*100)/100;
+		}
+		this.determinantB = determinant;
+		let det;
+		if(localStorage.getItem('Determinant(B)')===null){
+			det=[];
+		}else{
+			det=JSON.parse(localStorage.getItem('Determinant(B)'));
+		}
+		det.push(determinant);
+		localStorage.setItem('Determinant(B)',JSON.stringify(det));
+		this.printOnConsole("Determinant of matrix B: "+determinant)
+		return;
 	}
   
 	
